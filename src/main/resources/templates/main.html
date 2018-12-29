@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Main page</title>
+    </head>
+    <body>
+        
+      
+<h2>Main appplication page:</h2>
+
+        <h3>Users list:</h3>
+         <p>Total users in database: <span th:utext="${num}"></span></p>
+        <ul th:each="user : ${list}">
+            <li><span th:utext="${user}">No users!</span>, <span th:text="${user.surname}">No users!</span></li>
+        </ul>
+        <br />   
+              <hr />
+        <h3>Options</h3>
+        
+        <a href="/add"><button>Add new user</button></a><br /><br />
+        <a th:href="@{'/edit/' + ${userId}}"><button>Edit your profile</button></a><br /><br />
+        <a href="/admin"><button>Admin panel</button></a>
+        
+    </body>
+</html>
