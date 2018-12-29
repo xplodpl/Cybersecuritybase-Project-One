@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Administration panel</title>
+    </head>
+    <body>
+
+        <h2>Administration panel</h2>
+      
+<h3>Users list:</h3>
+<p>Total users in database: <span th:utext="${num}"></span></p>
+        <ul th:each="user : ${list}">
+            <li><span th:utext="${user}"></span>, <span th:text="${user.surname}"></span></li>
+        </ul>
+
+<h3>Database operations</h3>
+
+<form action="#" th:action="@{/admin/empty_database}" method="POST">
+            <p><input type="submit" value="Erase database!" /></p>
+        </form><br /><hr />
+        <a href="/main">
+            <button>Back to main page</button>
+        </a>
+
+    </body>
+</html>

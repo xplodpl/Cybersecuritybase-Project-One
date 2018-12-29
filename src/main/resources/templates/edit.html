@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Edit your data</title>
+    </head>
+    <body>
+
+        <h2>Edit your data</h2>
+
+        <form action="#" th:action="@{/edit}" method="POST">
+            <p><label for="name">Name</label>: <input type="text" name="name" id="name" th:value="${user.name}"/>&nbsp;<label for="surneme">Surname</label>: <input type="text" name="surname" id="surname" th:value="${user.surname}"/></p>
+            <p><label for="secret">Secret data</label>: <input type="text" name="secret" id="secret" th:value="${user.secret}"/></p>
+            <input type="hidden" th:value="${user.getId()}" name="userId" id="userId"/>
+            <p><input type="submit" value="Save changes" /></p>
+        </form> 
+   <hr />
+        <a href="/main">
+            <button>Back to main page</button>
+        </a>
+
+    </body>
+</html>

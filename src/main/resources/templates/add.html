@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Add new user</title>
+    </head>
+    <body>
+
+         <h2>Add new user to database </h2>
+
+        <form action="#" th:action="@{/main}" method="POST">
+            <p><label for="name">Name</label>: <input type="text" name="name" id="name"/>&nbsp;
+               <label for="surname">Surname</label>: <input type="text" name="surname" id="surname"/></p>
+            <p><label for="secret">Secret data</label>: <input type="text" name="secret" id="secret"/></p>
+            <p><input type="submit" value="Submit" /></p>
+            
+        </form>
+            <hr />
+         <a href="/main">
+            <button>Back to main page</button>
+        </a>
+    </body>
+</html>
