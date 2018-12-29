@@ -29,12 +29,16 @@ public class SignupController {
     
     @RequestMapping("*")
     public String defaultMapping(Model model) {
-        signupRepository.save(new Signup("Adam", "Smith", "MyPrecious"));
-        signupRepository.save(new Signup("John", "Brown", "MySeccret"));
-        signupRepository.save(new Signup("Ben", "Kowalski", "AccessToken"));
+        long usersCount = signupRepository.count();
+        long limit = 1;
+        if (usersCount < limit) {
+            signupRepository.save(new Signup("Adam", "Smith", "MyPrecious"));
+            signupRepository.save(new Signup("John", "Brown", "MySeccret"));
+            signupRepository.save(new Signup("Ben", "Kowalski", "AccessToken"));
+        }
         model.addAttribute("list", signupRepository.findAll());
         return "redirect:/main";
-        
+
     }
 
     @RequestMapping("add")
